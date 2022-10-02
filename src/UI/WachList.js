@@ -19,7 +19,7 @@ const WachList = () => {
         });
     };
 
-    setBasket(JSON.parse(localStorage.getItem("basket")));
+    setBasket(JSON.parse(localStorage.getItem("basket")) || []);
     fetchItems();
   }, []);
 
@@ -30,14 +30,14 @@ const WachList = () => {
       isOver: monitor.isOver(),
     }),
   });
+
   const addImageToBoard = ({ id }) => {
     const pictureList = apiData.filter((picture) => id === picture.mal_id);
     setBasket((board) => [...board, pictureList[0]]);
     localStorage.setItem("basket", JSON.stringify(basket));
   };
-  console.log(basket,'basket')
   return (
-    <div style={{ float: "right",width:'120px',height:'10vh'}} ref={dropRef}>
+    <div style={{width:'220px',height:'100vh', border: '1px solid #fff' }} ref={dropRef}>
     
       {basket && basket?.map((item) => (
         <section key={item?.mal_id}>

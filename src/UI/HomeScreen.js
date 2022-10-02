@@ -93,7 +93,7 @@ export const HomeScreen = () => {
         <button className="watchList-btn" onClick={watchListHandler}>
           WachList
         </button>
-        {watchList ? <WachList /> : null}
+        <WachList />
       </div>
     </div>
   );
