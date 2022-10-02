@@ -39,7 +39,7 @@ const WachList = () => {
   return (
     <div style={{ float: "right",width:'120px',height:'10vh'}} ref={dropRef}>
     
-      {basket?.map((item) => (
+      {basket && basket?.map((item) => (
         <section key={item?.mal_id}>
           <CharacterItem item={item} />
         </section>
