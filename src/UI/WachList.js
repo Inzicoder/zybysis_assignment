@@ -35,11 +35,12 @@ const WachList = () => {
     setBasket((board) => [...board, pictureList[0]]);
     localStorage.setItem("basket", JSON.stringify(basket));
   };
+  console.log(basket,'basket')
   return (
     <div style={{ float: "right",width:'120px',height:'10vh'}} ref={dropRef}>
     
       {basket?.map((item) => (
-        <section key={item.mal_id}>
+        <section key={item?.mal_id}>
           <CharacterItem item={item} />
         </section>
       ))}
